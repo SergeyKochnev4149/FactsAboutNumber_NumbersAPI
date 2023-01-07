@@ -22,7 +22,8 @@
         android:layout_height="53dp"
         android:layout_below="@id/editTextNumberDecimal"
         android:layout_centerHorizontal="true"
-        android:text="Get Fact" />
+        android:text="Get Fact"
+        android:onClick="getFact"/>
 
 
     <Button
@@ -32,7 +33,8 @@
         android:layout_below="@id/search_button"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="10dp"
-        android:text="Get fact about random number" />
+        android:text="Get fact about random number"
+        android:onClick="getFactAboutRandomNumber"/>
 
 
     <Button
@@ -41,22 +43,34 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:text="clear history" />
+        android:text="clear history"
+        android:onClick="clearHistory"/>
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/get_random"
         android:layout_above="@id/clear_history"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        >
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/requestHistory"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:orientation="vertical">
+        </LinearLayout>
+
 
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/idLoadingPB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
 
 
 </RelativeLayout>
